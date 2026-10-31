@@ -1,0 +1,109 @@
+			Grupo I
+1.a) A função pega numa lista e soma todos os valores positivos (maiores que 0).
+
+1.b)A função devolve uma lista com todas as combinações/sublistas possíveis formadas pelos elementos de x (incluindo a lista vazia e a própria lista).
+
+2.
+def interpretacoes(x):
+	if x==[]
+		return []
+	y = interpretacoes(x[1:])
+	return [[(x[0],v)]+z for v in [True,False] for z in y]
+	
+			Grupo II
+1.
+a) e
+b) d
+c) c
+d) b
+e) e
+
+2--nao sai--
+3.<<caderno>>
+4.<<caderno>>
+a)
+A heuristica não é admissível. A heurística sobrevaloriza o custo do caminho até à solução nos estados I,K. Uma possível alteração seria mudar a heurística de I=<8 e K<=9
+b) feito no caderno
+5
+a)
+Ações:
+->Atravessar(n,s1,s2)
+->Estacionar(n,p,s)
+->Percorrer(s,n1,n2)
+->sair(p,n,s)
+
+Vizinhos(s,n1,n2): rua s liga o n1 ao n2
+veiculoAt(n):veiculo no nó n
+NaRua(s): veiculo na rua s
+RuaComecaEm(s,n):rua s começa no nó n
+RuaAcabaEm(s,n): rua s termina no nó n
+TemEstacionamento(n,p):o parque de estacionamento p situa-se no nó n
+Estacionado(p,n): o veiculo está estacionado no parque p do nó n.
+
+b)
+Atravessar(n,s1,s2):
+PC: veiculoAt(n), (RuaComecaEm(s1,n) V RuaAcabaEm(s2,n)), NaRua(s1)
+Delete List: NaRua(s1)
+Add List: NaRua(s2)
+
+Estacionar(n,p,s):
+PC: veiculoAt(n), NaRua(s), TemEstacionamento(n,p)
+Delete List: NaRua(s)
+Add List: Estacionado(p,n)
+
+Percorrer(s,n1,n2):
+PC: vizinhos(s,n1,n2),veiculoAt(n1), NaRua(s)
+Delete List: veiculoAt(n1)
+Add List: veiculoAt(n2)
+
+Sair(p,n,s):
+PC: TemEstacionamento(n,p), Estacionado(p,n), VeiculoAt(n), (RuaComecaEm(s,n) V RuaAcabaEm(s,n))
+Delete List: Estacionado (p,n)
+Add List: NaRua(s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

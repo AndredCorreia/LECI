@@ -1,0 +1,40 @@
+1
+a)
+a funçao devolve uma lista semelhante à lista inicial mas sem os duplicados, portanto [1,2,3,4,2,1] seria retornado como [1,2,3,4].
+b)
+A função devolve uma lista apenas com os elementos que passaram no teste da funçao f(seja ele qual for).
+
+2.
+def contar_ocorrencias(lista):
+	if lista==[]:
+		return []
+		
+	contador=0
+	primeiro=lista[0]
+	for z in lista:
+		if z== lista[0]:
+			contador+=1
+
+
+	lista= [x for x in lista if x!=lista[0]]
+	
+	return [(primeiro, contador)] + contar_ocorrencias(lista)
+	
+	Grupo II
+1
+a) e 
+b) c
+c) c
+d) b
+e) d
+
+2.<<irrelevante>>
+3.<<resolvido no caderno>>
+
+4.
+a) A heuristica nao e admissivel. Os nos C e D violam a heurística. Para tornar a heurística admissível, h(C)= 3, h(D)=2
+b)<<resolvido no caderno>>
+
+5
+a)
+

@@ -1,0 +1,20 @@
+int main(void)
+{
+    // Configure Timer T3 (2 Hz with interrupts disabled)
+    T3CONbits.TCKPS = 7;    // Configura o prescaler para 1:256
+    PR3 = 39062;            // Define o período para gerar eventos a 2 Hz
+    TMR3 = 0;               // Reinicia o contador do timer
+    T3CONbits.TON = 1;      // Ativa o Timer 3 (Inicia a contagem)
+
+    while(1)
+    {
+        // Wait while T3IF = 0
+        while(IFS0bits.T3IF == 0); 
+        
+        // Reset T3IF
+        IFS0bits.T3IF = 0; 
+        
+        putChar('.');
+    }
+    return 0;
+}

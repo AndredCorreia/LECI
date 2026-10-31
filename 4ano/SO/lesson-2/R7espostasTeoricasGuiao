@@ -1,8 +1,0 @@
-Exercicio 2
-The message associated to the printf instruction placed after the execl did not show up. Why? What
-kind of message should be placed after the execl?
-	->Pq se a chamada ao execl for bem sucedida, o codigo vai correr para o "child", e a instruçao que estava na linha seguinte nao é executada. Como o execl só volta ao codigo original em caso de erro, deve se colocar uma mensagem do tipo (perror("Erro ao executar execl"); ).
-	
-The first and second arguments of the call to execl are equal. Taking into consideration the meaning of
-the argument list, do you understand why?
-	->O primeiro argumento indica ao sistema operativo a loc exata no disco do ficheiro executavel que deve ser carregado para a memoria. o segundo arg é o inicio da lista de args que será passada a funçao do novo programa. O null no final serve para avisar a funçao que a lista de args acabou.
