@@ -1,0 +1,40 @@
+|FreqDivider_Demo
+
+
+|FreqDivider_Demo|FreqDivider:Divider_Instance
+clkIn => s_counter[0].CLK
+clkIn => s_counter[1].CLK
+clkIn => s_counter[2].CLK
+clkIn => s_counter[3].CLK
+clkIn => s_counter[4].CLK
+clkIn => s_counter[5].CLK
+clkIn => s_counter[6].CLK
+clkIn => s_counter[7].CLK
+clkIn => s_counter[8].CLK
+clkIn => s_counter[9].CLK
+clkIn => s_counter[10].CLK
+clkIn => s_counter[11].CLK
+clkIn => s_counter[12].CLK
+clkIn => s_counter[13].CLK
+clkIn => s_counter[14].CLK
+clkIn => s_counter[15].CLK
+clkIn => s_counter[16].CLK
+clkIn => s_counter[17].CLK
+clkIn => s_counter[18].CLK
+clkIn => s_counter[19].CLK
+clkIn => s_counter[20].CLK
+clkIn => s_counter[21].CLK
+clkIn => s_counter[22].CLK
+clkIn => s_counter[23].CLK
+clkIn => s_counter[24].CLK
+clkIn => s_counter[25].CLK
+clkIn => s_counter[26].CLK
+clkIn => s_counter[27].CLK
+clkIn => s_counter[28].CLK
+clkIn => s_counter[29].CLK
+clkIn => s_counter[30].CLK
+clkIn => s_counter[31].CLK
+clkIn => clkOut~reg0.CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

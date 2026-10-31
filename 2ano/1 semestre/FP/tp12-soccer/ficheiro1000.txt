@@ -1,0 +1,13 @@
+Auckland City,140,1582
+Canterbury United,1099,1336
+Eastern Suburbs,899,1359
+Hamilton Wanderers Afc,2500,1221
+Hawke's Bay United,1682,1281
+Southern United,2644,1198
+Tasman United,2402,1230
+Team Wellington,297,1498
+WaiBOP United,2372,1232
+Waitakere United,852,1366
+Wanderers SC,2533,1217
+Wellington Phoenix Reserves,2532,1217
+Young Heart Manawatu,2725,1174

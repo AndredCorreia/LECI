@@ -1,0 +1,83 @@
+|ShiftRegister_Demo
+SW[0] => shiftregistern:system.sin
+SW[1] => shiftregistern:system.toleft
+SW[2] => shiftregistern:system.enable
+CLOCK_50 => clkdividern:ClkDividerN.clkIn
+LEDR[0] << shiftregistern:system.dataOut[0]
+LEDR[1] << shiftregistern:system.dataOut[1]
+LEDR[2] << shiftregistern:system.dataOut[2]
+LEDR[3] << shiftregistern:system.dataOut[3]
+LEDR[4] << shiftregistern:system.dataOut[4]
+LEDR[5] << shiftregistern:system.dataOut[5]
+LEDR[6] << shiftregistern:system.dataOut[6]
+LEDR[7] << shiftregistern:system.dataOut[7]
+
+
+|ShiftRegister_Demo|ClkDividerN:ClkDividerN
+clkIn => s_divCounter[0].CLK
+clkIn => s_divCounter[1].CLK
+clkIn => s_divCounter[2].CLK
+clkIn => s_divCounter[3].CLK
+clkIn => s_divCounter[4].CLK
+clkIn => s_divCounter[5].CLK
+clkIn => s_divCounter[6].CLK
+clkIn => s_divCounter[7].CLK
+clkIn => s_divCounter[8].CLK
+clkIn => s_divCounter[9].CLK
+clkIn => s_divCounter[10].CLK
+clkIn => s_divCounter[11].CLK
+clkIn => s_divCounter[12].CLK
+clkIn => s_divCounter[13].CLK
+clkIn => s_divCounter[14].CLK
+clkIn => s_divCounter[15].CLK
+clkIn => s_divCounter[16].CLK
+clkIn => s_divCounter[17].CLK
+clkIn => s_divCounter[18].CLK
+clkIn => s_divCounter[19].CLK
+clkIn => s_divCounter[20].CLK
+clkIn => s_divCounter[21].CLK
+clkIn => s_divCounter[22].CLK
+clkIn => s_divCounter[23].CLK
+clkIn => s_divCounter[24].CLK
+clkIn => s_divCounter[25].CLK
+clkIn => clkOut~reg0.CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ShiftRegister_Demo|ShiftRegisterN:system
+clk => aux[0].CLK
+clk => aux[1].CLK
+clk => aux[2].CLK
+clk => aux[3].CLK
+clk => aux[4].CLK
+clk => aux[5].CLK
+clk => aux[6].CLK
+clk => aux[7].CLK
+sin => aux.DATAA
+sin => aux.DATAB
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+toleft => aux.OUTPUTSELECT
+enable => aux[0].ENA
+enable => aux[1].ENA
+enable => aux[2].ENA
+enable => aux[3].ENA
+enable => aux[4].ENA
+enable => aux[5].ENA
+enable => aux[6].ENA
+enable => aux[7].ENA
+dataOut[0] <= aux[0].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[1] <= aux[1].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[2] <= aux[2].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[3] <= aux[3].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[4] <= aux[4].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[5] <= aux[5].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[6] <= aux[6].DB_MAX_OUTPUT_PORT_TYPE
+dataOut[7] <= aux[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

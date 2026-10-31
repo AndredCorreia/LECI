@@ -1,0 +1,12 @@
+tad graph: grafo exatamente igual mas com os sentidos opostos. Transformar (u,v) em (v,u);
+
+modulo bellman-ford:mostrar como se chega a todos os vertices, atraves do caminho mais curto(o caminho mais curto num grafo com v vertices, tem no maximo v-1 arestas);
+
+modulo transitive-closure:grafo que vai simplificar o original. tem os mesmos vertices, mas sempre que no original haja por exemplo (1-4-5), no grafo novo aparecera um caminho direto entre o (1-5). Basicamente, o novo grafo será uma copia do original, adicionando as ligaçoes diretas entre vertices que se ligavam anteriormente por caminhos. (1-3-5-6)=(1-3-5-6)+(1-5)+(1-6);
+
+ponto 4- matriz dos caminhos;
+
+modulo eccentricity-measures: excentricidade de um vertice(distancia maior entre ele e todos os outros), o raio (menor excentricidade possivel(menor caminho possivel)), o diametro (maior valor de excentricidade possivel (maior caminho possivel)), conjunto dos certices centrais (conjunto de vertices que tem o mesmo valor de excentricidade do raio (menor possivel)); 
+
+analise de complexidade: (v-1 * n arestas)
+

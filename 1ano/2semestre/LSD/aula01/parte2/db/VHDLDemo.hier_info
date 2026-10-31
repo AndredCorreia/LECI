@@ -1,0 +1,23 @@
+|nandDemo
+SW[0] => nandgate:nangatte0.inport0
+SW[1] => nandgate:nangatte0.inport1
+LEDR[0] <= nandgate:nangatte0.outport
+
+
+|nandDemo|nandgate:nangatte0
+inport0 => and2gate:and0.inport0
+inport1 => and2gate:and0.inport1
+outport <= notgate:not0.outport
+
+
+|nandDemo|nandgate:nangatte0|and2gate:and0
+inport0 => outport.IN0
+inport1 => outport.IN1
+outport <= outport.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nandDemo|nandgate:nangatte0|notgate:not0
+inport => outport.DATAIN
+outport <= inport.DB_MAX_OUTPUT_PORT_TYPE
+
+

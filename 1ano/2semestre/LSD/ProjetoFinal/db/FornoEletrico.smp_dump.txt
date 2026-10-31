@@ -1,0 +1,12 @@
+
+State Machine - |MaquinaEstados|next_state
+Name next_state.FINISHED next_state.COOKING next_state.IDLE 
+next_state.IDLE 0 0 0 
+next_state.COOKING 0 1 1 
+next_state.FINISHED 1 0 1 
+
+State Machine - |MaquinaEstados|state
+Name state.FINISHED state.COOKING state.IDLE 
+state.IDLE 0 0 0 
+state.COOKING 0 1 1 
+state.FINISHED 1 0 1 

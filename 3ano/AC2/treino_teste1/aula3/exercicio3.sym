@@ -1,0 +1,13 @@
+GAS LISTING exercicio3.s 			page 1
+
+
+DEFINED SYMBOLS
+        exercicio3.s:1      *ABS*:000000000000bf88 parteHI
+        exercicio3.s:2      *ABS*:0000000000006104 TRISECLR
+        exercicio3.s:3      *ABS*:00000000000060c8 TRISDSET
+        exercicio3.s:5      *ABS*:00000000000060d0 PORTD
+        exercicio3.s:6      *ABS*:0000000000006120 LATE
+        exercicio3.s:10     .text:0000000000000000 main
+        exercicio3.s:17     .text:0000000000000010 loop
+
+NO UNDEFINED SYMBOLS

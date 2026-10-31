@@ -1,0 +1,71 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Contador_Modulo12 is
+    Port (
+        CLK : in std_logic;
+        SW : in std_logic;
+        LED : out std_logic_vector(3 downto 0);
+        SEG : out std_logic_vector(6 downto 0);
+        DIG : out std_logic_vector(3 downto 0)
+    );
+end Contador_Modulo12;
+
+architecture Behavioral of Contador_Modulo12 is
+    signal counter : integer range 0 to 11 := 0;
+    signal display_on : std_logic := '1';
+    signal blink : std_logic := '0';
+    signal clk_div : integer range 0 to 24999999 := 0; 
+    
+    constant seg_conv : array(0 to 11) of std_logic_vector(6 downto 0) := (
+        "0000001", -- 0
+        "1001111", -- 1
+        "0010010", -- 2
+        "0000110", -- 3
+        "1001100", -- 4
+        "0100100", -- 5
+        "0100000", -- 6
+        "0001111", -- 7
+        "0000000", -- 8
+        "0000100", -- 9
+        "0001000", -- 10
+        "0110000"  -- 11
+    );
+begin
+
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+            if SW = '0' then
+                display_on <= not display_on; 
+            end if;
+            
+            if clk_div = 24999999 then
+                clk_div <= 0;
+                blink <= not blink; 
+                counter <= counter + 1;
+                if counter = 12 then
+                    counter <= 0;
+                end if;
+            else
+                clk_div <= clk_div + 1;
+            end if;
+        end if;
+    end process;
+
+    LED <= (others => blink); 
+
+    DIG <= std_logic_vector(to_unsigned(counter, 4));
+
+    process(counter, display_on)
+    begin
+        if display_on = '1' then
+            SEG <= seg_conv(counter);
+        else
+            SEG <= (others => '0');
+        end if;
+    end process;
+
+end Behavioral;

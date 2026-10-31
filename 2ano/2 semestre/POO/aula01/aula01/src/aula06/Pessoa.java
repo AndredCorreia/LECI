@@ -1,0 +1,23 @@
+package aula06;
+import aula05.DateYMD;
+
+class Pessoa {
+    private String nome;
+    private int cc;
+    private DateYMD dataNasc;
+
+    public Pessoa(String nome, int cc, DateYMD dataNasc) {
+        this.nome = nome;
+        this.cc = cc;
+        this.dataNasc = dataNasc;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public String toString() {
+        return nome + "; CC: " + cc + "; Data de Nascimento: " + dataNasc;
+    }
+}

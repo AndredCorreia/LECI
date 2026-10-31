@@ -1,0 +1,10 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity nandgate is
+port ( inport1 : in std_logic;
+		inport2 : in std_logic;
+		outport : out std_logic);
+end nandgate;
+
+architecture structural 

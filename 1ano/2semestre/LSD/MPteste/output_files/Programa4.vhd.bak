@@ -1,0 +1,70 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Programa4 is
+    Port ( 
+        LEDR : out STD_LOGIC_VECTOR(3 downto 0);
+        CLK    : in  STD_LOGIC;            
+        LEDG : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end Programa1;
+
+architecture Behavioral of Programa1 is
+    constant CLOCK_FREQ : integer := 50000000; -- Frequência do clock em Hz (50 MHz)
+    constant HALF_SECOND : integer := CLOCK_FREQ / 2; -- Metade de um segundo em contagens de clock
+    signal counter : integer range 0 to CLOCK_FREQ - 1 := 0; -- Contador de tempo
+    
+    signal red_state : boolean := true; -- Estado dos LEDs vermelhos
+    signal green_state : boolean := false; -- Estado dos LEDs verdes
+    signal blink_counter : integer range 0 to CLOCK_FREQ - 1 := 0; -- Contador para piscar os LEDs verdes
+begin
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+            -- Incrementa o contador de tempo
+            counter <= counter + 1;
+            
+            -- Controle dos LEDs vermelhos
+            if counter < 5 * HALF_SECOND then
+                LEDR <= "0000"; -- Leds vermelhos desligados durante 5 segundos
+            else
+                if red_state then
+                    LEDR <= "1111"; -- Todos os LEDs vermelhos ligados
+                else
+                    LEDR <= "0000"; -- Todos os LEDs vermelhos desligados
+                end if;
+                
+                -- Alternar o estado dos LEDs vermelhos duas vezes por segundo
+                if counter mod (CLOCK_FREQ / 2) = 0 then
+                    red_state <= not red_state;
+                end if;
+            end if;
+            
+            -- Controle dos LEDs verdes
+            if counter < 5 * HALF_SECOND then
+                -- Piscar os LEDs verdes uma vez por segundo durante 5 segundos
+                if blink_counter < HALF_SECOND then
+                    LEDG <= "0000"; -- Leds verdes desligados
+                else
+                    LEDG <= "1111"; -- Todos os LEDs verdes ligados
+                end if;
+                
+                -- Incrementar o contador para piscar os LEDs verdes
+                blink_counter <= blink_counter + 1;
+                
+                -- Resetar o contador quando atinge um segundo
+                if blink_counter = CLOCK_FREQ then
+                    blink_counter <= 0;
+                end if;
+            else
+                LEDG <= "0000"; -- Leds verdes desligados durante 5 segundos
+            end if;
+            
+            -- Resetar o contador de tempo quando atinge 10 segundos
+            if counter = 10 * HALF_SECOND then
+                counter <= 0;
+            end if;
+        end if;
+    end process;
+end Behavioral;

@@ -1,0 +1,52 @@
+-- Máquina de Estados de Controle Automático
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity maquinaestados is
+    Port ( TD, TF, Time : in INTEGER range 0 to 999;
+           Clock : in STD_LOGIC;
+           RESET : in STD_LOGIC;
+           estado : out STD_LOGIC_VECTOR(1 downto 0);
+           led : out STD_LOGIC);
+end maquinaestados;
+
+architecture Behavioral of maquinaestados is
+    type state_type is (espera, assando, final);
+    signal state, next_state : state_type := espera;
+begin
+    process(Clock, RESET)
+    begin
+        if RESET = '1' then
+            state <= espera;
+        elsif rising_edge(Clock) then
+            state <= next_state;
+        end if;
+    end process;
+    
+    process(state, Time, TF)
+    begin
+        case state is
+            when espera =>
+                if Time = TD then
+                    next_state <= assando;
+                else
+                    next_state <= espera;
+                end if;
+            when assando =>
+                if Time = TF then
+                    next_state <= final;
+                else
+                    next_state <= assando;
+                end if;
+            when final =>
+                next_state <= final;
+            when others =>
+                next_state <= espera;
+        end case;
+    end process;
+    
+    led <= '1' when state = final else '0';
+    estado <= std_logic_vector(to_unsigned(state, 2));
+end Behavioral;

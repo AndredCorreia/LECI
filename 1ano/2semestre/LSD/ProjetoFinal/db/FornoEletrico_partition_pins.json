@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "estado_forno[0]",
+					"strict" : false
+				},
+				{
+					"name" : "estado_forno[1]",
+					"strict" : false
+				},
+				{
+					"name" : "alarme",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "KEY3",
+					"strict" : false
+				},
+				{
+					"name" : "TD[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[4]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TF[0]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[6]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[5]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[4]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[3]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[2]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[1]",
+					"strict" : false
+				},
+				{
+					"name" : "relogio[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

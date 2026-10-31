@@ -1,0 +1,21 @@
+|Mux2_1Demo
+SW[0] => mux2_1:mux2_1_0.A[0]
+SW[1] => mux2_1:mux2_1_0.A[1]
+SW[2] => mux2_1:mux2_1_0.B[0]
+SW[3] => mux2_1:mux2_1_0.B[1]
+Key[0] => mux2_1:mux2_1_0.sel
+Ledr[0] <= mux2_1:mux2_1_0.outport[0]
+Ledr[1] <= mux2_1:mux2_1_0.outport[1]
+
+
+|Mux2_1Demo|Mux2_1:mux2_1_0
+sel => outport.OUTPUTSELECT
+sel => outport.OUTPUTSELECT
+A[0] => outport.DATAB
+A[1] => outport.DATAB
+B[0] => outport.DATAA
+B[1] => outport.DATAA
+outport[0] <= outport.DB_MAX_OUTPUT_PORT_TYPE
+outport[1] <= outport.DB_MAX_OUTPUT_PORT_TYPE
+
+

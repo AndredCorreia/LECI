@@ -1,0 +1,13 @@
+GAS LISTING exercicio1.s 			page 1
+
+
+DEFINED SYMBOLS
+        exercicio1.s:1      *ABS*:000000000000bf88 SFR_BASE_HI
+        exercicio1.s:4      *ABS*:0000000000006048 TRISBSET
+        exercicio1.s:5      *ABS*:0000000000006104 TRISECLR
+        exercicio1.s:7      *ABS*:0000000000006050 PORTB
+        exercicio1.s:8      *ABS*:0000000000006120 LATE
+        exercicio1.s:13     .text:0000000000000000 main
+        exercicio1.s:22     .text:0000000000000010 loop
+
+NO UNDEFINED SYMBOLS

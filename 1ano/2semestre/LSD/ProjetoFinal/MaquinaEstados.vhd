@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity MaquinaEstados is
+    Port (
+        TD : in std_logic_vector(7 downto 0);
+        TF : in std_logic_vector(7 downto 0);
+        relogio : in std_logic_vector(7 downto 0);
+        temp_atual : in std_logic_vector(7 downto 0);
+        clock : in std_logic;
+        reset : in std_logic;
+        estado_forno : out std_logic_vector(1 downto 0);
+        alarme : out std_logic
+    );
+end MaquinaEstados;
+
+architecture Behavioral of MaquinaEstados is
+    type state_type is (IDLE, COOKING, FINISHED);
+    signal state, next_state : state_type;
+    signal contador_tempo : unsigned(7 downto 0) := (others => '0');
+    
+    -- Function to convert state_type to integer
+    function state_to_integer(s: state_type) return integer is
+    begin
+        case s is
+            when IDLE => return 0;
+            when COOKING => return 1;
+            when FINISHED => return 2;
+            when others => return 0;
+        end case;
+    end function;
+    
+begin
+
+    process(clock, reset)
+    begin
+        if reset = '1' then
+            state <= IDLE;
+            contador_tempo <= (others => '0');
+            alarme <= '0';
+        elsif rising_edge(clock) then
+            state <= next_state;
+            case state is
+                when IDLE =>
+                    if unsigned(relogio) >= unsigned(TF) - unsigned(TD) then
+                        next_state <= COOKING;
+                    else
+                        next_state <= IDLE;
+                    end if;
+                when COOKING =>
+                    if contador_tempo >= unsigned(TD) then
+                        next_state <= FINISHED;
+                    else
+                        contador_tempo <= contador_tempo + 1;
+                        next_state <= COOKING;
+                    end if;
+                when FINISHED =>
+                    alarme <= '1';
+                    if KEY3 = '1' then
+                        alarme <= '0';
+                        next_state <= IDLE;
+                    else
+                        next_state <= FINISHED;
+                    end if;
+                when others =>
+                    next_state <= IDLE;
+            end case;
+        end if;
+    end process;
+
+    estado_forno <= std_logic_vector(to_unsigned(state_to_integer(state), 2));
+
+end Behavioral;

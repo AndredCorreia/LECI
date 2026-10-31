@@ -1,0 +1,19 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Program1 is
+    Port (
+        LED    : out STD_LOGIC_VECTOR(7 downto 0)
+    );
+end Program1;
+
+architecture behavioral of Program1 is
+begin
+    process
+    begin
+        -- 4 LEDs vermelhos (D0-D3) e 4 LEDs verdes (D4-D7) ligados
+        LED <= "11110000";
+        wait;
+    end process;
+end behavioral;

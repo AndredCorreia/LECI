@@ -1,0 +1,40 @@
+-- Controlador Principal
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity controlador_principal is
+    Port ( sw1, sw2, KEY0, KEY1, KEY2, KEY3, RESET, Clock : in STD_LOGIC;
+           HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6 : out STD_LOGIC_VECTOR(6 downto 0);
+           resistencia, led : out STD_LOGIC);
+end controlador_principal;
+
+architecture Behavioral of controlador_principal is
+    signal TD, TF, temp_media, temp_atual : INTEGER range 0 to 999;
+    signal Time, estado : INTEGER range 0 to 1439;
+begin
+    -- Instancia os blocos criados anteriormente
+    ajuste_tempos_inst : entity work.ajuste_tempos
+        port map (sw1, sw2, KEY1, KEY2, Clock, RESET, TD, TF);
+    
+    ajuste_temperatura_inst : entity work.ajuste_temperatura
+        port map (sw1, sw2, KEY1, KEY2, Clock, RESET, temp_media);
+    
+    controle_temperatura_inst : entity work.controle_temperatura
+        port map (temp_media, Clock, RESET, resistencia, temp_atual);
+    
+    controle_display_inst : entity work.controle_display
+        port map (temp_atual, temp_media, Clock, HEX4, HEX5, HEX6);
+    
+    relogio_inst : entity work.relogio
+        port map (Clock, RESET, sw1 and sw2, Time);
+    
+    visualizacao_tempos_inst : entity work.visualizacao_tempos
+        port map (TD, TF, Time, HEX0, HEX1, HEX2, HEX3);
+    
+    maquina_estados_inst : entity work.maquina_estados
+        port map (TD, TF, Time, Clock, RESET, std_logic_vector(to_unsigned(estado, 2)), led);
+    
+    -- Lógica adicional, se necessário
+end Behavioral;

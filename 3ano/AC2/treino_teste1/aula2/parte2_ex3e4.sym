@@ -1,0 +1,26 @@
+GAS LISTING parte2_ex3e4.s 			page 1
+
+
+DEFINED SYMBOLS
+      parte2_ex3e4.s:1      *ABS*:0000000000000006 PRINT_INT
+      parte2_ex3e4.s:2      *ABS*:0000000000000003 PUT_CHAR
+      parte2_ex3e4.s:3      *ABS*:0000000000000001 INKEY
+      parte2_ex3e4.s:9      .data:0000000000000000 cnt1
+      parte2_ex3e4.s:10     .data:0000000000000004 cnt5
+      parte2_ex3e4.s:11     .data:0000000000000008 cnt10
+      parte2_ex3e4.s:12     .data:000000000000000c speed
+      parte2_ex3e4.s:13     .data:0000000000000010 run_flag
+      parte2_ex3e4.s:19     .text:0000000000000000 main
+      parte2_ex3e4.s:23     .text:0000000000000008 while_loop
+      parte2_ex3e4.s:55     .text:000000000000007c set_A
+      parte2_ex3e4.s:59     .text:000000000000008c set_N
+      parte2_ex3e4.s:63     .text:000000000000009c set_S
+      parte2_ex3e4.s:67     .text:00000000000000ac set_R
+      parte2_ex3e4.s:71     .text:00000000000000b8 print_display
+      parte2_ex3e4.s:140    .text:00000000000001bc wait
+      parte2_ex3e4.s:133    .text:00000000000001a8 loop_end
+      parte2_ex3e4.s:123    .text:0000000000000168 check_cnt1
+      parte2_ex3e4.s:146    .text:00000000000001d0 wait_loop
+      parte2_ex3e4.s:151    .text:00000000000001e4 wait_end
+
+NO UNDEFINED SYMBOLS

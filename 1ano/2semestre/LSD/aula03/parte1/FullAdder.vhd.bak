@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity FullAdder is
+port (a,b,cin : in std_logic;
+		count, s : out std_logic);
+end FUllAdder;
+
+architecture behavioral of FullAdder is
+
+begin 
+	s       <= a xor b xor cin;
+	count   <= (a and b) or (a xor b) and cin);
+
+end behavioral;

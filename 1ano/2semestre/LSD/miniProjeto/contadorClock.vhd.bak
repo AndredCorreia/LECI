@@ -1,0 +1,31 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity contador_modulo_12 is
+    Port ( clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           switch : in STD_LOGIC;
+           LED : out STD_LOGIC_VECTOR (3 downto 0);
+           segment_display : out STD_LOGIC_VECTOR (6 downto 0));
+end contador_modulo_12;
+
+architecture Behavioral of contador_modulo_12 is
+    signal count_value : integer range 0 to 11 := 0;
+    signal display_value : integer range 0 to 11 := 0;
+    signal clock_counter : integer range 0 to 49999999 := 0; 
+    signal LED_control : STD_LOGIC := '0';
+    signal display_control : STD_LOGIC := '1'; 
+
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                clock_counter <= 0;
+            else
+                clock_counter <= clock_counter + 1;
+            end if;
+        end if;
+    end process;

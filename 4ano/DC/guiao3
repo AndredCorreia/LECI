@@ -1,0 +1,34 @@
+Guiao 3 DC
+
+1. 5-Pin TO-220.
+2. 
+i2c-tools> i2cdetect
+E (31170) i2ctools: I2C bus is not initialized. Please run 'i2cconfig' first
+Command returned non-zero error code: 0x103 (ESP_ERR_INVALID_STATE)
+i2c-tools> i2cconfig --sda 6 --scl 7
+
+
+10. O protocolo permite que múltiplos dispositivos partilhem o mesmo par de fios, diferenciam-se pelos seus endereços. O primeiro pacote de dados transmitido pelo master tem o endereço do destinatário. Apenas o destinatário consegue processar a mensagem e responder, enquanto os outros ignoram o tráfego.
+
+11
+a) 100ms para o sensor estabilizar
+b) o primeiro byte é o endereço do device I2C (primeiros 7 bits) + o bit que identifica se é uma leitura ou uma escrita (no caso é uma leitura, logo o LSB vai a '1').
+c) o bit 3 serve para saber se está calibrado ou não ('1' está, '0' não está)
+d) deve-se enviar o comando 0xAC, com os bytes 0x33 e 0x00 (são os trigger measurement).
+e) deve esperar 80 milissegundos  antes de ler os dados convertidos. quando o status bit [bit 7] estiver a 0, os dados podem ser lidos. se estiver a 1, o sensor está ocupado e o host tem de esperar que o processamento dos dados seja completo.
+f) São recebidos 6 bytes. O primeiro é de estado. Os 20 bits de humidade e de temperatura distrubuem-se pelo segundo, terceiro e o nibble superior do quarto. Os 20 bits da temperatura distruem-se a partir do nibble inferior do quarto byte e pelos quinto e sexto bytes.
+g) Envia um NACK (not ackowledge) para encerrar a operação
+
+12.
+Byte 0 (byte de estado)
+byte 1-5(bytes de dados)
+byte 6 (CRC)
+
+0xB2+ 0x33 + 0xA= 0xB233A = 729914 HUMIDADE
+0x5 + 0xCE + 0x D9 = 0x5CED9 = 380633 TEMPERATURA
+
+HUMIDADE:
+729914/2²⁰ * 100%= 69.61%
+
+TEMPERATURA: 
+(380633/2²⁰ *200) -50= 22.60ºC

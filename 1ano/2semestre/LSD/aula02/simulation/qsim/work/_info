@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/andre/Desktop/Universidade/1ano2semestre/LSD/aula02/simulation/qsim
+vDec2_4En
+Z1 !s110 1709213902
+!i10b 1
+!s100 ;zEfQzz_<8gCDFeRnbOWe0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ID6DZbm7lBUW8;QfP1LO`70
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1709213901
+8Dec2_4EnDemo.vo
+FDec2_4EnDemo.vo
+!i122 0
+L0 32 180
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1709213901.000000
+!s107 Dec2_4EnDemo.vo|
+!s90 -work|work|Dec2_4EnDemo.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@dec2_4@en
+Edec2_4en
+Z7 w1709214349
+Z8 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z9 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z10 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z13 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+!i122 4
+R0
+Z14 8Dec2_4EnDemo.vho
+Z15 FDec2_4EnDemo.vho
+l0
+L35 1
+V0@38l@ZG1ASNGE2^Y[z]N2
+!s100 5W0HD]L_PFF0`=ZBjlB<D2
+Z16 OV;C;2020.1;71
+32
+Z17 !s110 1709214350
+!i10b 1
+Z18 !s108 1709214350.000000
+Z19 !s90 -work|work|Dec2_4EnDemo.vho|
+Z20 !s107 Dec2_4EnDemo.vho|
+!i113 1
+R5
+Z21 tExplicit 1 CvgOpt 0
+Astructure
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 8 dec2_4en 0 22 0@38l@ZG1ASNGE2^Y[z]N2
+!i122 4
+l68
+L43 176
+Va<fG>]PHE^LYlhac8AckR3
+!s100 9V=00o4DVJBA>dMeWQQPZ0
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R5
+R21
+Edec2_4en_vhd_vec_tst
+Z22 w1709214348
+R11
+R12
+!i122 5
+R0
+Z23 8Dec2_4En_2.vwf.vht
+Z24 FDec2_4En_2.vwf.vht
+l0
+L32 1
+V=Fcz1LPO@dQF_NOg:L9622
+!s100 GGLn?lDEfWOgHJjmo`<i81
+R16
+32
+R17
+!i10b 1
+R18
+Z25 !s90 -work|work|Dec2_4En_2.vwf.vht|
+Z26 !s107 Dec2_4En_2.vwf.vht|
+!i113 1
+R5
+R21
+Adec2_4en_arch
+R11
+R12
+Z27 DEx4 work 20 dec2_4en_vhd_vec_tst 0 22 =Fcz1LPO@dQF_NOg:L9622
+!i122 5
+l47
+Z28 L34 81
+Z29 VLXe87OS96`cZ^U?:NI^cf0
+Z30 !s100 dVgA43NcXFkEQH;1TF5;Y0
+R16
+32
+R17
+!i10b 1
+R18
+R25
+R26
+!i113 1
+R5
+R21
+vDec2_4En_vlg_vec_tst
+R1
+!i10b 1
+!s100 7<36jU?eJJo96VRHYne<X3
+R2
+IiXKFm=;i3_f^3QaL:8JNY2
+R3
+R0
+w1709213900
+8Dec2_4En_1.vw.vwf.vt
+FDec2_4En_1.vw.vwf.vt
+!i122 1
+L0 30 71
+R4
+r1
+!s85 0
+31
+!s108 1709213902.000000
+!s107 Dec2_4En_1.vw.vwf.vt|
+!s90 -work|work|Dec2_4En_1.vw.vwf.vt|
+!i113 1
+R5
+R6
+n@dec2_4@en_vlg_vec_tst

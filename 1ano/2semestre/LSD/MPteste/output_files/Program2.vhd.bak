@@ -1,0 +1,31 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+
+entity Program2 is
+    Port ( CLK : in STD_LOGIC;
+           LED_RED : out STD_LOGIC_VECTOR(3 downto 0);
+           LED_GREEN : out STD_LOGIC_VECTOR(3 downto 0));
+end Program2;
+
+architecture Behavioral of Program2 is
+    constant CLOCK_FREQUENCY : natural := 50000000; -- Frequência do clock em Hz (50 MHz)
+    constant HALF_SECOND : natural := CLOCK_FREQUENCY / 2; -- Meio segundo em número de ciclos de clock
+    signal counter : unsigned(23 downto 0) := (others => '0');
+    signal toggle : std_logic := '0'; -- Sinal de toggle para alternar os LEDs vermelhos
+
+begin
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+            counter <= counter + 1;
+            if counter = HALF_SECOND then
+                toggle <= not toggle; -- Inverte o sinal de toggle a cada meio segundo
+                counter <= (others => '0'); -- Reinicia o contador
+            end if;
+        end if;
+    end process;
+
+    LED_RED <= (others => toggle); -- LEDs vermelhos piscam com a frequência do sinal de toggle
+    LED_GREEN <= "0000"; -- Todos os LEDs verdes desligados
+end Behavioral;

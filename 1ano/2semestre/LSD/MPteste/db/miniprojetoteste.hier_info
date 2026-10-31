@@ -1,0 +1,45 @@
+|Programa4
+LEDR[0] << LEDR[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << LEDR[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << LEDR[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << LEDR[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => blink_counter[0].CLK
+CLK => blink_counter[1].CLK
+CLK => blink_counter[2].CLK
+CLK => blink_counter[3].CLK
+CLK => blink_counter[4].CLK
+CLK => blink_counter[5].CLK
+CLK => blink_counter[6].CLK
+CLK => blink_counter[7].CLK
+CLK => blink_counter[8].CLK
+CLK => blink_counter[9].CLK
+CLK => blink_counter[10].CLK
+CLK => blink_counter[11].CLK
+CLK => blink_counter[12].CLK
+CLK => blink_counter[13].CLK
+CLK => blink_counter[14].CLK
+CLK => blink_counter[15].CLK
+CLK => blink_counter[16].CLK
+CLK => blink_counter[17].CLK
+CLK => blink_counter[18].CLK
+CLK => blink_counter[19].CLK
+CLK => blink_counter[20].CLK
+CLK => blink_counter[21].CLK
+CLK => blink_counter[22].CLK
+CLK => blink_counter[23].CLK
+CLK => blink_counter[24].CLK
+CLK => blink_counter[25].CLK
+CLK => LEDG[0]~reg0.CLK
+CLK => LEDG[1]~reg0.CLK
+CLK => LEDG[2]~reg0.CLK
+CLK => LEDG[3]~reg0.CLK
+CLK => LEDR[0]~reg0.CLK
+CLK => LEDR[1]~reg0.CLK
+CLK => LEDR[2]~reg0.CLK
+CLK => LEDR[3]~reg0.CLK
+LEDG[0] << LEDG[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] << LEDG[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] << LEDG[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[3] << LEDG[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

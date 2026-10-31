@@ -1,0 +1,23 @@
+# Binários e ficheiros de compilação
+*.o
+*.elf
+*.bin
+*.out
+build/
+dist/
+
+# Python / Ambientes virtuais
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Máquinas Virtuais e ISOs
+*.vmdk
+*.vdi
+*.qcow2
+*.iso
+
+# Ficheiros do sistema/editor
+.DS_Store
+.vscode/

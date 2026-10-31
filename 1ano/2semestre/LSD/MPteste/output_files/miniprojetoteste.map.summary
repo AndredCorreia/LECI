@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Apr 11 15:37:38 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : miniprojetoteste
+Top-level Entity Name : Programa4
+Family : Cyclone IV E
+Total logic elements : 55
+    Total combinational functions : 52
+    Dedicated logic registers : 30
+Total registers : 30
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

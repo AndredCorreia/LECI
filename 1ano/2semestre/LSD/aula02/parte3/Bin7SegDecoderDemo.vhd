@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Bin7SegDecoderDemo is
+port (SW : in std_logic_vector(3 downto 0);
+		KEY :in std_logic_vector (0 downto 0);
+		HEX0 : out std_logic_vector (6 downto 0));
+		end Bin7SegDecoderDemo;
+architecture shell of Bin7SegDecoderDemo is
+begin
+bin7SegDecoder_0 : entity work. bin7SegDecoder(behavioral7)
+
+
+port map ( enable => key(0),
+			binInput => SW,
+			decOut_n => HEX0);
+end shell;
